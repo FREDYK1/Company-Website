@@ -1,9 +1,10 @@
 import streamlit as sl
 import pandas
 
-sl.set_page_config(layout="wide")
+sl.set_page_config(page_title="KanTech Labs", page_icon="pics/Kantech_favicon.png", layout="wide")
 
-sl.title("The Best Company")
+
+sl.title("KANTECH LABS(The Best Company)")
 content = """
 Tech Innovate, founded in 2010, leads in technological advancements, offering innovative software solutions to enhance 
 business operations globally. Our services span cloud computing, AI, and custom software development, underpinned by 
@@ -18,22 +19,22 @@ sl.subheader("Our Team")
 
 col1, col2, col3 = sl.columns([1, 1, 1])
 
-df = pandas.read_csv("trials/csvs/data.csv")
+df = pandas.read_csv("csvs/data.csv")
 
 with col1:
     for index, row in df[:4].iterrows():
         sl.header(F"{row['first name'].title()} {row['last name'].title()}")
         sl.write(row["role"])
-        sl.image(F"trials/pics/{row['image']}")
+        sl.image(F"pics/{row['image']}")
 
 with col2:
     for index, row in df[4:8].iterrows():
         sl.header(F"{row['first name'].title()} {row['last name'].title()}")
         sl.write(row["role"])
-        sl.image(F"trials/pics/{row['image']}")
+        sl.image(F"pics/{row['image']}")
 
 with col3:
     for index, row in df[8:].iterrows():
         sl.header(F"{row['first name'].title()} {row['last name'].title()}")
         sl.write(row["role"])
-        sl.image(F"trials/pics/{row['image']}")
+        sl.image(F"pics/{row['image']}")
