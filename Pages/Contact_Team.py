@@ -20,5 +20,5 @@ Topic: {subject}
 """
     button = sl.form_submit_button("Submit")
     if button:
-        email_send(message)
+        email_send(message, "frederickkankam7@gmail.com")
         sl.success("Message sent successfully!")
