@@ -1,19 +1,16 @@
-import smtplib
-import ssl
-import os
+import smtplib, ssl
 
-def email_send(message, receiver, sender=None):
+
+def send_email(message):
     host = "smtp.gmail.com"
     port = 465
-    username = os.getenv("EMAIL_USERNAME")
-    password = os.getenv("EMAIL_PASSWORD")
-    sender = sender or username
+
+    username = "frederickkankam7@gmail.com"
+    password = "nskk ztvf dqnr iynv"
+
+    receiver = "frederickkankam7@gmail.com"
     context = ssl.create_default_context()
 
-    try:
-        with smtplib.SMTP_SSL(host, port, context=context) as server:
-            server.login(username, password)
-            server.sendmail(sender, receiver, message)
-        print("Email sent successfully")
-    except Exception as e:
-        print(f"Failed to send email: {e}")
+    with smtplib.SMTP_SSL(host, port, context=context) as server:
+        server.login(username, password)
+        server.sendmail(username, receiver, message)

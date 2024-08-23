@@ -1,6 +1,6 @@
 import pandas
 import streamlit as sl
-from email_implementation import email_send
+from email_implementation import send_email
 
 sl.set_page_config(page_title="Contact Us", page_icon="pics/Contact_Us.png", layout="wide")
 sl.header("Contact Us")
@@ -20,5 +20,5 @@ Topic: {subject}
 """
     button = sl.form_submit_button("Submit")
     if button:
-        email_send(message, "frederickkankam7@gmail.com")
+        send_email(message)
         sl.success("Message sent successfully!")
